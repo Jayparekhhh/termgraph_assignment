@@ -3,7 +3,7 @@
 <head>
     <!-- Meta information for character encoding and responsive design -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initsial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizing Data in Terminal with Termgraph</title>
     
     <!-- CSS styles for layout and design -->
@@ -167,22 +167,112 @@
 
     <!-- Code examples section -->
     <h2>Code Examples</h2>
-    <p>For making basic bar graphs</p>
+    <h3>Bar Chart</h3>
+    <p><b>Basic Bar Chart:</b></p>
+    <pre><code class="language-bash">termgraph student_marks.txt</code><button class="copy-btn">Copy</button></pre>
+    <p><b>Some common arguments -</b></p>
+    <ul>
+        <li> '--title' TITLE: Used to give a title to the graph
+        </li>
 
-    <h3>Basic Bar Chart</h3>
-    <pre><code class="language-bash">echo "2013,450.56
-2014,760.00" | termgraph --title "Annual Growth"</code><button class="copy-btn">Copy</button></pre>
+        <li>
+            '--space-between' : Adds a blank line between bars for better readability.
 
-    <h3>Emoji-based Chart</h3>
-    <pre><code class="language-bash">termgraph data.dat --custom-tick "🚀" --width 20</code><button class="copy-btn">Copy</button></pre>
+        </li>
 
-    <!-- Screenshots section -->
-    <h2>Screenshots</h2>
-    <div class="screenshot">
-        <img src="https://user-images.githubusercontent.com/45363/43405624-1a4a821c-93cf-11e8-84f3-f45c65b7ca98.png" alt="Stacked bar chart example">
-        <p>Multi-variable stacked chart with colors.</p>
-    </div>
+    </ul>
+    <p>For example</p>
+    <pre><code class="language-bash">termgraph --title 'Student Marks' --space-between student_marks.txt</code><button class="copy-btn">Copy</button></pre>
+    <p>And for the given dataset the following output will be shown</p>
+    <img src="https://i.imgur.com/v0czLsa.png">
 
+    <p><b>More common arguments -</b></p>
+
+
+    <ul>
+        <li> '--suffix' SUFFIX: Adds a suffix to all the values at the end of the bars eg. %,kg,m etc.
+
+        </li>
+
+        <li>
+            '--color [COLOR ...]': It is used to set the colors of the bars.You can specify multiple colors for different categories. Available colors are 'red', 'blue', 'green', 'magenta', 'yellow', 'black', 'cyan'.
+
+        </li>
+
+    </ul>
+    <p>For example</p>
+    <pre><code class="language-bash">termgraph student_marks.txt --color [blue] --suffix '%'</code><button class="copy-btn">Copy</button></pre>
+    <p>And for the above given dataset the following output will be shown</p>
+    <img src="https://i.imgur.com/enLqG3x.png">
+
+    <p><b>Optional Arguments -</b></p>
+    <ul>
+        <li>
+            --format FORMAT: Sets the format specifier for the labels (e.g., decimal places).Example the format specifier "{:.1f}" rounds off all the values to first decimal place.
+
+        </li>
+        <li>
+             --label-before: Displays values before the bars instead of after
+
+        </li>
+        <li>
+            --no-values: Hides the values displayed at the end of bars.
+
+        </li>
+        <li>
+            --width WIDTH : Used to adjust the width of the graph (default width is 50)
+
+        </li>
+
+
+    </ul>
+
+    <h4>Custon Ticks and DELIM-</h4>
+    <ul>
+        <li>
+            --custom-tick CUSTOM_TICK: Used to create custom ticks instead of the bars in the graph. These ticks can also be emojis.
+        </li>
+        <li>
+            --delim DELIM: It specifies the delimiter in the data file. The default delimiter is space or comma.
+        </li>
+    </ul>
+
+    <pre><code class="language-bash">termgraph --delim '|' --custom-tick '😀' vowel_data.txt</code><button class="copy-btn">Copy</button></pre>
+    <p>And for the given dataset the following output will be shown</p>
+    <img src="https://i.imgur.com/nw9TkLg.jpeg">
+
+    <h3>Stacked</h3>
+    <p> --stacked: It creates a stacked bar graph in which all the categories of a single field are summed and represented by a single bar.</p>
+    
+    <p>For example</p>
+    <pre><code class="language-bash">termgraph website_data.txt --color [yellow,green]</code><button class="copy-btn">Copy</button></pre>
+    <p>And in the above code --stacked has not been used so, for the given dataset the following output will be shown</p>
+    <img src="https://i.imgur.com/Bg1u4Wh.jpeg">
+
+    <p>And with using stacked</p>
+    <pre><code class="language-bash">termgraph --stacked --space-between website_data.txt</code><button class="copy-btn">Copy</button></pre>
+    <img src="https://i.imgur.com/CW3f37x.jpeg">
+
+    <h3>Histogram</h3>
+    <ul>
+        <li> --histogram: Creates a histogram from the given data instead of a simple bar graph</li>
+        <li>  --bins BINS :It takes an integer n and classifies the data into n equal intervals for making the histogram.</li>
+    </ul>
+    <p>For example</p>
+    <pre><code class="language-bash">termgraph --histogram --color 'magenta' --bins 6 histogram_data.txt</code><button class="copy-btn">Copy</button></pre>
+    <p>And for the given dataset the following output will be shown</p>
+    <img src="https://i.imgur.com/gt40w1l.jpeg">
+
+    <h3>Calendar</h3>
+    <ul>
+        <li> --calendar: It displays the data as a calendar heatmap in which months are displayed on the horizontal axis and days of week on vertical axis. The first column of the data file should contain dates in the yyyy-mm-dd format.</li>
+        <li>--start-dt START_DT: It sets the start date for the calendar heatmap.</li>
+        <pre><code class="language-bash">termgraph --calendar --start-dt 2024-01-05 cal_data.txt</code><button class="copy-btn">Copy</button></pre>
+        <p>And for the given dataset the following output will be shown</p>
+        <img src="https://i.imgur.com/PTXvvSY.jpeg">
+
+
+    </ul>
     <!-- Use cases section -->
     <h2>Use Cases</h2>
     <b>Using To Quickly Visualize:</b>
@@ -236,5 +326,6 @@
         });
     </script>
 </body>
+
 
 </html>
