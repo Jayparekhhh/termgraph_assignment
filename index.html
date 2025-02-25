@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta information for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizing Data in Terminal with Termgraph</title>
@@ -88,7 +89,10 @@ pre {
     <h4><p>Install fom <a href = "https://pypi.org/project/termgraph/">PyPI project</a></p></h4>
 
     <p>Requirements:</p>
-<p><b>Python 3.7+</b></p>
+    <ul>
+        <li>Python 3.7+</li>
+        <li>colorama package</li>
+    </ul>
 
     <p>To check if termgraph has been installed correctly on your system </p>
     <p>Paste the following code on your terminal:</p>
@@ -112,14 +116,12 @@ pre {
 
 
 
-    <!-- Key Features Section -->
-    <!-- Key Features Section -->
     <h2 style="text-align: center; margin-bottom: 20px;">Key Features</h2>
     <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
         <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <h3 style="color: #333; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-bottom: 10px;">Core Visualization Capabilities</h3>
             <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
-                <li><strong>Bar Charts:</strong> Implements proportional scaling algorithms for dynamic width adjustment, ensuring ASCII compatibility and density perception.</li>
+                <li><strong>Bar Charts:</strong> Implements proportional scaling algorithms for dynamic width adjustment.</li>
                 <li><strong>Histograms:</strong> Uses binning algorithms with Sturges' formula or manual bin settings (--bins parameter) for flexible data grouping.</li>
                 <li><strong>Stacked Graphs:</strong> Supports layered composition with Unicode block elements, offering absolute and percentage-based accumulation.</li>
                 <li><strong>Heatmap Calendars:</strong> Processes date-stamped data into grid layouts, using Julian day calculations for structured alignment (--start-dt).</li>
@@ -304,4 +306,5 @@ pre {
         });
     </script>
 </body>
+
 </html>
