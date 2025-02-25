@@ -33,32 +33,15 @@
         }
 
         /* Styling for preformatted blocks (code blocks) */
-        pre {
-            background-color: #1e1e1e; /* Dark background for code blocks */
-            color: #dcdcdc; /* Light text color for contrast */
-            padding: 15px;
-            border-radius: 5px; /* Rounded corners */
-            overflow-x: auto; /* Horizontal scrolling for long lines of code */
-            position: relative; /* For positioning the copy button */
-        }
-
-        /* Styling for Copy button */
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .copy-btn:hover {
-            background-color: #2980b9;
-        }
+/* Styling for preformatted blocks (code blocks) */
+pre {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 15px 40px 15px 15px; /* Added right padding */
+    border-radius: 5px;
+    overflow-x: auto;
+    position: relative;
+}
 
         /* Styling for images (screenshots) */
         img {
@@ -98,10 +81,10 @@
     </ul>
 
     <!-- Installation and setup section -->
-    <h2>Installation</h2>
+    <h2>Installation & Setup</h2>
     <h4><p>Install using pip:</p></h4>
     <p>Paste the following code on your terminal</p>
-    <pre><code class="language-bash">pip3 install termgraph</code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash">pip3 install termgraph</code></pre>
 
     <h4><p>Install fom <a href = "https://pypi.org/project/termgraph/">PyPI project</a></p></h4>
 
@@ -111,11 +94,10 @@
         <li>colorama package</li>
     </ul>
 
-    <h2>Setup</h2>
     <p>To check if termgraph has been installed correctly on your system </p>
     <p>Paste the following code on your terminal:</p>
 
-    <pre><code class="language-bash">termgraph --version</code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash">termgraph --version</code></pre>
 
     <p>And if something like this comes in the output, you are good to go!</p>
 
@@ -125,9 +107,9 @@
     <p>Create data file with two columns either comma(.csv) or space(.dat) separated. The first column is your labels, the second column is a numeric data</p>
 
     <p> After that run the following code on command line.</p>
-    <pre><code class="language-bash"> termgraph [datafile]    </code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash"> termgraph [datafile]    </code></pre>
     <p> For help:</p>
-    <pre><code class="language-bash"> termgraph -h    </code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash"> termgraph -h    </code></pre>
 
     
 
@@ -169,7 +151,7 @@
     <h2>Code Examples</h2>
     <h3>Bar Chart</h3>
     <p><b>Basic Bar Chart:</b></p>
-    <pre><code class="language-bash">termgraph student_marks.txt</code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash">termgraph student_marks.txt</code></pre>
     <p><b>Some common arguments -</b></p>
     <ul>
         <li> '--title' TITLE: Used to give a title to the graph
@@ -182,8 +164,8 @@
 
     </ul>
     <p>For example</p>
-    <pre><code class="language-bash">termgraph --title 'Student Marks' --space-between student_marks.txt</code><button class="copy-btn">Copy</button></pre>
-    <p>And for the given dataset the following output will be shown</p>
+    <pre><code class="language-bash">termgraph --title 'Student Marks' --space-between student_marks.txt</code></pre>
+    <p>And for the <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/student_marks.txt" target="_blank">given</a> dataset the following output will be shown</p>
     <img src="https://i.imgur.com/v0czLsa.png">
 
     <p><b>More common arguments -</b></p>
@@ -201,8 +183,8 @@
 
     </ul>
     <p>For example</p>
-    <pre><code class="language-bash">termgraph student_marks.txt --color [blue] --suffix '%'</code><button class="copy-btn">Copy</button></pre>
-    <p>And for the above given dataset the following output will be shown</p>
+    <pre><code class="language-bash">termgraph student_marks.txt --color [blue] --suffix '%'</code></pre>
+    <p>And for the above <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/student_marks.txt" target="_blank">given</a> dataset the following output will be shown</p>
     <img src="https://i.imgur.com/enLqG3x.png">
 
     <p><b>Optional Arguments -</b></p>
@@ -237,20 +219,20 @@
         </li>
     </ul>
 
-    <pre><code class="language-bash">termgraph --delim '|' --custom-tick '😀' vowel_data.txt</code><button class="copy-btn">Copy</button></pre>
-    <p>And for the given dataset the following output will be shown</p>
+    <pre><code class="language-bash">termgraph --delim '|' --custom-tick '😀' vowel_data.txt</code></pre>
+    <p>And for the <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/vowel_data.txt" target="_blank">given</a> dataset the following output will be shown</p>
     <img src="https://i.imgur.com/nw9TkLg.jpeg">
 
     <h3>Stacked</h3>
     <p> --stacked: It creates a stacked bar graph in which all the categories of a single field are summed and represented by a single bar.</p>
     
     <p>For example</p>
-    <pre><code class="language-bash">termgraph website_data.txt --color [yellow,green]</code><button class="copy-btn">Copy</button></pre>
-    <p>And in the above code --stacked has not been used so, for the given dataset the following output will be shown</p>
+    <pre><code class="language-bash">termgraph website_data.txt --color [yellow,green]</code></pre>
+    <p>And in the above code --stacked has not been used so, for the <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/website_data.txt" target="_blank">given</a> dataset the following output will be shown</p>
     <img src="https://i.imgur.com/Bg1u4Wh.jpeg">
 
     <p>And with using stacked</p>
-    <pre><code class="language-bash">termgraph --stacked --space-between website_data.txt</code><button class="copy-btn">Copy</button></pre>
+    <pre><code class="language-bash">termgraph --stacked --space-between website_data.txt</code></pre>
     <img src="https://i.imgur.com/CW3f37x.jpeg">
 
     <h3>Histogram</h3>
@@ -259,16 +241,16 @@
         <li>  --bins BINS :It takes an integer n and classifies the data into n equal intervals for making the histogram.</li>
     </ul>
     <p>For example</p>
-    <pre><code class="language-bash">termgraph --histogram --color 'magenta' --bins 6 histogram_data.txt</code><button class="copy-btn">Copy</button></pre>
-    <p>And for the given dataset the following output will be shown</p>
+    <pre><code class="language-bash">termgraph --histogram --color 'magenta' --bins 6 histogram_data.txt</code></pre>
+    <p>And for the  <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/histogram_data.txt" target="_blank">given</a> dataset the following output will be shown</p>
     <img src="https://i.imgur.com/gt40w1l.jpeg">
 
     <h3>Calendar</h3>
     <ul>
         <li> --calendar: It displays the data as a calendar heatmap in which months are displayed on the horizontal axis and days of week on vertical axis. The first column of the data file should contain dates in the yyyy-mm-dd format.</li>
         <li>--start-dt START_DT: It sets the start date for the calendar heatmap.</li>
-        <pre><code class="language-bash">termgraph --calendar --start-dt 2024-01-05 cal_data.txt</code><button class="copy-btn">Copy</button></pre>
-        <p>And for the given dataset the following output will be shown</p>
+        <pre><code class="language-bash">termgraph --calendar --start-dt 2024-01-05 cal_data.txt</code></pre>
+        <p>And for the  <a href="https://github.com/Jayparekhhh/termgraph_assignment/blob/main/data/cal_data.txt" target="_blank">given</a> dataset the following output will be shown</p>
         <img src="https://i.imgur.com/PTXvvSY.jpeg">
 
 
@@ -326,6 +308,4 @@
         });
     </script>
 </body>
-
-
 </html>
