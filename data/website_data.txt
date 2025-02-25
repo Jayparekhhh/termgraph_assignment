@@ -1,0 +1,9 @@
+# Data with 2 categories
+@ MobileVisitors,DesktopVisitors
+Monday 350 200  
+Tuesday 400 250  
+Wednesday 375 220  
+Thursday 420 280  
+Friday 460 300  
+Saturday 390 270  
+Sunday 415 290 
