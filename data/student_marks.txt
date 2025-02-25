@@ -1,1 +1,9 @@
-
+# Student marks  
+Math 85.23  
+Science 90.45  
+English 88.76  
+History 75.56  
+Geography 80.24  
+Physics 92.88  
+Chemistry 86.18  
+Computer 95.16
