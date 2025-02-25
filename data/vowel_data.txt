@@ -1,0 +1,6 @@
+# data with '|' as the delimiter
+A | 80
+E | 84
+I | 76
+O | 68
+U | 71
